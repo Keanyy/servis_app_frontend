@@ -1,12 +1,20 @@
 # Uncomment this line to define a global platform for your project
 platform :ios, '14.0'
 
-# A target is a specification of a product from a pod.
 target 'Runner' do
-  # Flutter'ın pod'larını otomatik olarak bulmasını sağlar
-  flutter_prebuild_pods
+  use_frameworks!
+  
+  # Pods for a Flutter application are defined below.
+  # Use the Flutter tool to add pods when you add a plugin.
+  # For example, a pod for a plugin called 'path_provider'
+  # would be added as follows:
+  #   pod 'path_provider', :path => '../.symlinks/plugins/path_provider/ios'
+  
+  # THIS LINE IS CRITICAL. IT AUTOMATICALLY LOADS YOUR FLUTTER PLUGINS.
+  flutter_application_path = File.join(File.dirname(__FILE__), '..')
+  eval(File.read(File.join(flutter_application_path, '.flutter-plugins')))
 
-  # Uygulamanızdaki Flutter bağımlılıkları buraya eklenir
-  # pod 'firebase_core' gibi
-
+  target 'RunnerTests' do
+    inherit! :search_paths
+  end
 end
