@@ -1,9 +1,12 @@
-# platform :ios, '14.0'
+# Uncomment this line to define a global platform for your project
+platform :ios, '14.0'
 
+# A target is a specification of a product from a pod.
 target 'Runner' do
-  use_frameworks!
-  pod 'Firebase', '~> 10.0' # Örnek bir pod
+  # Flutter'ın pod'larını otomatik olarak bulmasını sağlar
+  flutter_prebuild_pods
 
-  # Bu kısmı Flutter otomatik olarak oluşturur
+  # Uygulamanızdaki Flutter bağımlılıkları buraya eklenir
+  # pod 'firebase_core' gibi
 
 end
