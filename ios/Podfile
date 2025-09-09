@@ -1,0 +1,9 @@
+# platform :ios, '14.0'
+
+target 'Runner' do
+  use_frameworks!
+  pod 'Firebase', '~> 10.0' # Örnek bir pod
+
+  # Bu kısmı Flutter otomatik olarak oluşturur
+
+end
