@@ -1,0 +1,29 @@
+name: servis_app
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.8.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.1
+  file_picker: ^6.0.0
+  image_picker: ^1.1.1
+  cupertino_icons: ^1.0.8
+  jwt_decoder: ^2.0.1
+  camera_windows: ^0.2.6+2
+  shared_preferences: ^2.2.3 # Added for storing auth token
+  path_provider: ^2.1.5
+  open_file_plus: ^3.4.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
