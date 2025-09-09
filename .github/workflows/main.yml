@@ -16,7 +16,7 @@ jobs:
       - name: Flutter SDK'yı Kur
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.6'
+          flutter-version: '3.22.2'
           channel: 'stable'
 
       - name: Bağımlılıkları Yükle
