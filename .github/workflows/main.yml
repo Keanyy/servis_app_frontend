@@ -1,0 +1,38 @@
+name: Flutter iOS Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Flutter Projesini Kopyala
+      uses: actions/checkout@v2
+
+    - name: Flutter SDK'yı Kur
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.19.6' 
+        channel: 'stable'
+
+    - name: Bağımlılıkları Yükle
+      run: flutter pub get
+
+    - name: iOS Build'i Yapılandır
+      run: |
+        cd ios
+        pod install --repo-update
+        cd ..
+
+    - name: iOS Release Build'i Başlat
+      run: flutter build ipa --release
+
+    - name: IPA Dosyasını Yükle
+      uses: actions/upload-artifact@v2
+      with:
+        name: ios-build
+        path: build/ios/ipa/*.ipa
